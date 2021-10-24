@@ -1,1 +1,1 @@
-# DatingApp
+# CourseApp
