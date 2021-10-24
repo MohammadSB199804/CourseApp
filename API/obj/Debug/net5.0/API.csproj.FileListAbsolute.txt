@@ -22,7 +22,6 @@ C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\staticwebassets\API.Stat
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\staticwebassets\API.StaticWebAssets.xml
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\scopedcss\bundle\API.styles.css
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\API.RazorTargetAssemblyInfo.cache
-C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\API.csproj.CopyComplete
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\API.dll
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\ref\API.dll
 C:\MohammadSB\FullStack_Course\API\API\obj\Debug\net5.0\API.pdb

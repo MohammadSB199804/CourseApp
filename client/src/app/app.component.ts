@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'The Dating App';
+  title = 'API';
   users: any; //TypeSaftey
 
   constructor(private http:HttpClient){ // Angular comes with lifecycle events , the lifecycle event that takes place after the constructor known as initilization 
