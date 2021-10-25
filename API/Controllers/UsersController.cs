@@ -22,9 +22,22 @@ namespace API.Controllers
 
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id){
-
+            var user = _context.Users.FindAsync(id);
+            if(await user == null){
+                return BadRequest("User does not exist !");
+            }
             return await  _context.Users.FindAsync(id);
+        }
 
+        [HttpDelete("Delete")]
+        public async Task<ActionResult<AppUser>> DeleteUser (int id){
+
+            var user = _context.Users.SingleOrDefault(x => x.Id == id);
+            if(user != null){
+                _context.Users.Remove(user);
+                _context.SaveChangesAsync();
+            }
+           return user;
         }
     }
 }
