@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,15 +32,33 @@ namespace API.Controllers
             return await  _context.Users.FindAsync(id);
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete/{{id}}")]
         public async Task<ActionResult<AppUser>> DeleteUser (int id){
 
             var user = _context.Users.SingleOrDefault(x => x.Id == id);
             if(user != null){
                 _context.Users.Remove(user);
                 _context.SaveChangesAsync();
+            }else{
+                return BadRequest("User does not exist !");
             }
            return user;
+        }
+        [HttpPut("Update/{{id}}")]
+        public async Task<ActionResult<AppUser>> UpdateUser(UpdateUserDto UserUpdate, int id){
+            var user = _context.Users.SingleOrDefault(x => x.Id == id);
+            using var hmac = new HMACSHA512(); 
+            if(user != null){
+                user.UserName = UserUpdate.userName;
+                user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(UserUpdate.Password));
+                user.PasswordSalt = hmac.Key;
+            }
+            // }else {
+            //     return BadRequest("User does not exist !");
+            // }
+            _context.SaveChangesAsync();
+                return user;
+            
         }
     }
 }
