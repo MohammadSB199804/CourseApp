@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {}
+    "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {
+    "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
+        "projectUniqueName": "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
+        "projectPath": "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Mohammad G Sabobeh\\.nuget\\packages\\",
-        "outputPath": "C:\\MohammadSB\\FullStack_Course\\API\\API\\obj\\",
+        "outputPath": "c:\\MohammadSB\\FullStack_Course\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohammad G Sabobeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +39,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -53,6 +56,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.14.0, )"
             }
           },
           "imports": [
