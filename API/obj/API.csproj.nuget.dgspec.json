@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {}
+    "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {
+    "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
+        "projectUniqueName": "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
+        "projectPath": "C:\\MohammadSB\\FullStack_Course\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Mohammad G Sabobeh\\.nuget\\packages\\",
-        "outputPath": "c:\\MohammadSB\\FullStack_Course\\API\\API\\obj\\",
+        "outputPath": "C:\\MohammadSB\\FullStack_Course\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohammad G Sabobeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,6 +21,7 @@
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,6 +43,10 @@
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

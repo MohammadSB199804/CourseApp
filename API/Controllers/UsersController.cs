@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,10 +20,12 @@ namespace API.Controllers
             _context = context;
         }   
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers(){
              return await  _context.Users.ToListAsync();
         }
 
+        // [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id){
             var user = _context.Users.FindAsync(id);
@@ -61,19 +64,5 @@ namespace API.Controllers
             
         }
 
-        [HttpPost("login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto){
-
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.userName);
-            if(user == null) return Unauthorized("Invalid User Name !");
-
-            using var hmac = new HMACSHA512(user.PasswordSalt);
-            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
-
-            for(int i=0 ;i<computedHash.Length;i++){
-                if(computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid Password !");
-            }
-            return user;
-        }
     }
 }
